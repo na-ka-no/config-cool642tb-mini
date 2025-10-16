@@ -200,10 +200,10 @@
 
         FUNCTION {
             bindings = <
-&kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)  &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &kp UNDER                              &moC              &kp RS(ASTERISK)       &kp RS(LEFT_PARENTHESIS)  &kp UNDER         &kp BACKSPACE
-&kp HOME            &kp END              &kp LS(LC(TAB))     &kp LC(TAB)          &kp LA(TAB)     &kp UNDER      &trans  &moA              &kp RS(RIGHT_BRACKET)  &kp RS(BACKSLASH)         &kp SEMICOLON     &kp SINGLE_QUOTE
-&kp LG(D)           &kp LG(DOWN_ARROW)   &kp LC(PAGE_UP)     &kp LC(PAGE_DOWN)    &kp LA(ESCAPE)  &trans         &trans  &kp LEFT_BRACKET  &kp RS(COMMA)          &kp RS(PERIOD)            &kp RS(NUMBER_1)  &kp SLASH
-&trans              &trans               &trans              &trans               &trans          &trans         &trans  &trans                                                                               &kp LG(LS(S))
+&kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)  &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &kp UNDER                              &moC              &kp RS(ASTERISK)   &kp RS(LEFT_PARENTHESIS)  &kp UNDER         &kp BACKSPACE
+&kp HOME            &kp END              &kp LS(LC(TAB))     &kp LC(TAB)          &kp LA(TAB)     &kp UNDER      &trans  &moA              &kp RIGHT_BRACKET  &kp BACKSLASH             &kp SEMICOLON     &kp SINGLE_QUOTE
+&kp LG(D)           &kp LG(DOWN_ARROW)   &kp LC(PAGE_UP)     &kp LC(PAGE_DOWN)    &kp LA(ESCAPE)  &trans         &trans  &kp LEFT_BRACKET  &kp RS(COMMA)      &kp RS(PERIOD)            &kp RS(NUMBER_1)  &kp SLASH
+&trans              &trans               &trans              &trans               &trans          &trans         &trans  &trans                                                                           &kp LG(LS(S))
             >;
         };
 
