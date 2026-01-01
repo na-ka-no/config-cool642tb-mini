@@ -19,12 +19,12 @@
 
         shift_tab {
             bindings = <&kp LANG2>;
-            key-positions = <12 13>;
+            key-positions = <12 11>;
         };
 
         lang {
             bindings = <&kp LANG1>;
-            key-positions = <2 3>;
+            key-positions = <13 12>;
         };
 
         lclick {
@@ -35,6 +35,11 @@
         rclick {
             bindings = <&mkp MB2>;
             key-positions = <19 20>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
         };
     };
 
@@ -54,10 +59,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W       &kp E         &kp R         &kp T                                                    &kp Y        &kp U  &kp I      &lt 5 O  &kp P
-&mt LEFT_WIN A      &kp S       &kp D         &lt 4 F       &kp G        &kp LC(Y)              &kp PRINTSCREEN      &kp H        &kp J  &lt 5 K    &kp L    &kp SEMICOLON
-&mt LEFT_CONTROL Z  &kp X       &kp C         &kp V         &kp B        &kp LC(Z)              &kp ESC              &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp TAB             &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt 2 SPACE  &mt LSHIFT DELETE      &mt RSHFT BACKSPACE  &lt 1 ENTER                             &kp F4
+&kp Q               &kp W        &kp E         &kp R         &kp T                                                    &kp Y        &kp U  &kp I      &lt 5 O  &kp P
+&mt LEFT_WIN A      &kp S        &kp D         &lt 4 F       &kp G        &kp LC(Y)              &kp PRINTSCREEN      &kp H        &kp J  &lt 5 K    &kp L    &kp SEMICOLON
+&mt LEFT_CONTROL Z  &kp X        &kp C         &kp V         &kp B        &kp LC(Z)              &kp ESC              &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL           &bootloader  &kp LEFT_GUI  &kp LEFT_ALT  &lt 2 SPACE  &mt LSHIFT DELETE      &mt RSHFT BACKSPACE  &lt 1 ENTER                             &bootloader
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
