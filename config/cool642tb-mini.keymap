@@ -45,30 +45,31 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W       &kp E         &kp R         &kp T                                                    &kp Y        &kp U  &kp I      &kp O    &kp P
-&mt LEFT_WIN A      &kp S       &kp D         &lt 4 F       &kp G        &kp LC(Y)              &kp PRINTSCREEN      &kp H        &kp J  &lt 5 K    &kp L    &kp SEMICOLON
-&mt LEFT_CONTROL Z  &kp X       &kp C         &kp V         &kp B        &kp LC(Z)              &kp ESC              &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp TAB             &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt 2 SPACE  &mt LSHIFT DELETE      &mt RSHFT BACKSPACE  &lt 1 ENTER                             &kp F4
+&kp Q               &kp L             &kp U       &kp COMMA     &kp DOT                                            &kp F        &kp W  &kp R      &kp Y            &kp P
+&mt LEFT_CONTROL E  &kp A             &kp I       &kp O         &kp O        &none              &none              &kp K        &kp T  &lt 5 N    &kp S            &mt RIGHT_CONTROL
+&mt LSHIFT Z        &mt LEFT_ALT X    &kp C       &kp V         &kp SLASH    &none              &none              &kp G        &kp D  &kp M      &mt RIGHT_ALT J  &mt RSHIFT B
+&none               &none             &none       &kp LEFT_GUI  &lt 2 SPACE  &lt 3 TAB          &lt 2 ENTER        &lt 1 BACKSPACE                                 &none
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        FUNCTION {
+        NUM {
             bindings = <
-&kp N1    &kp N2     &kp N3     &kp N4     &kp N5                              &kp N6     &kp N7    &kp N8    &kp N9        &kp N0
-&kp PLUS  &kp MINUS  &kp ASTRK  &kp SLASH  &kp EQUAL  &kp UNDER      &kp HOME  &kp ENTER  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT
-&kp F1    &kp F2     &kp F3     &kp F4     &kp F5     &trans         &trans    &kp F6     &kp F7    &kp F8    &kp F9        &kp F10
-&trans    &trans     &trans     &trans     &trans     &trans         &trans    &trans                                       &kp F11
+&kp ESC     &kp N1     &kp N2     &kp N3      &kp MINUS                           &kp GRAVE  &kp N7     &kp N8    &kp                 &kp back
+&kp N0      &kp N4     &kp N5     &kp N6      &kp EQUAL  &trans         &trans    &kp ENTERkg
+&kp LPAR   &kp RRAR  &kp LBKT              &mt RIGHT_CONTROL RBKT
+&kp F1      &kp N7     &kp N8     &kp N9      &kp SLASH  &trans         &trans    &kp F6     &kp F7     &kp F8    &mt RIGHT_ALT LBRC    &mt RSHIFT RBRC
+&trans      &trans     &trans     &trans      &trans     &trans         &trans    &trans                                                &trans
             >;
         };
 
-        NUM {
+        FANCTION {
             bindings = <
-&kp LS(EXCL)  &kp AT        &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                              &kp CARET    &kp AMPERSAND  &kp LS(UNDER)  &kp TILDE     &kp MINUS
-&kp SQT       &kp LS(LBRC)  &kp LBKT       &kp LS(LPAR)  &kp LS(DQT)    &kp LS(LT)      &kp LS(GT)  &kp LS(DQT)  &kp LS(RPAR)   &kp RBKT       &kp LS(RBRC)  &kp SQT
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4   &trans          &trans      &trans       &trans         &trans         &kp PIPE      &kp BACKSLASH
-&bt BT_CLR    &trans        &trans         &trans        &trans         &trans          &trans      &trans                                                   &trans
+&kp F1        &kp F2        &kp F3        &kp F4  &kp LS(PRCNT)                              &kp CARET    &kp AMPERSAND  &kp LS(UNDER)  &kp TILDE     &kp MINUS
+&kp SQT       &kp LS(LBRC)  &kp LBKT      &kp LS(LPAR)  &kp LS(DQT)    &kp LS(LT)      &kp LS(GT)  &kp LS(DQT)  &kp LS(RPAR)   &kp RBKT       &kp LS(RBRC)  &kp SQT
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans          &trans      &trans       &trans         &trans         &kp PIPE      &kp BACKSLASH
+&bt BT_CLR    &trans        &trans         &trans        &trans         &trans          &trans      &trans                                                  &trans
             >;
         };
 
