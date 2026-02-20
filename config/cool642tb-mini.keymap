@@ -58,7 +58,7 @@
         NUM {
             bindings = <
 &kp ESC              &kp N1           &kp N2  &kp N3  &kp MINUS                           &kp GRAVE  &kp APOS   &kp SEMI   &kp STAR          &kp PIPE
-&mt LEFT_CONTROL N0  &kp N4           &kp N5  &kp N6  &kp PLUS   &trans         &trans    &kp ENTER  &kp LPAR   &kp RRAR   &kp LBKT          &mt RIGHT_CONTROL RBKT
+&mt LEFT_CONTROL N0  &kp N4           &kp N5  &kp N6  &kp PLUS   &trans         &trans    &kp ENTER  &kp LPAR   &kp RPAR   &kp LBKT          &mt RIGHT_CONTROL RBKT
 &mt LSHIFT EQUAL     &mt LEFT_ALT N7  &kp N8  &kp N9  &kp SLASH  &trans         &trans    &kp BSLH   &kp EXCL   &kp QMARK  &mt RIGHT_ALT LT  &mt RSHIFT GT
 &trans               &trans           &trans  &trans  &trans     &trans         &trans    &trans     &trans                                  &trans
             >;
@@ -67,7 +67,7 @@
         FANCTION {
             bindings = <
 &kp F1   &kp F2   &kp F3  &kp F4  &kp F5                                &trans    &trans           &mkp MB3        &trans           &trans
-&kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &trans         &trons      &trans    &mkp MB1         &kp UP_ARROW    &mkp MB2         &trans
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &trans         &trans      &trans    &mkp MB1         &kp UP_ARROW    &mkp MB2         &trans
 &kp F11  &kp F12  &none   &none   &none      &trans         &trans      &trans    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
 &trans   &trans   &trans  &trans  &trans     &trans         &trans      &trans                                                      &trans
             >;
