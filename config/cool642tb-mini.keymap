@@ -47,7 +47,7 @@
         default_layer {
             bindings = <
 &kp Q               &kp L             &kp U       &kp COMMA     &kp DOT                                            &kp F        &kp W  &kp R      &kp Y            &kp P
-&mt LEFT_CONTROL E  &kp A             &kp I       &kp O         &kp O        &none              &none              &kp K        &kp T  &lt 5 N    &kp S            &mt RIGHT_CONTROL
+&mt LEFT_CONTROL E  &kp A             &kp I       &kp O         &kp MINUS    &none              &none              &kp K        &kp T  &lt 5 N    &kp S            &mt RIGHT_CONTROL
 &mt LSHIFT Z        &mt LEFT_ALT X    &kp C       &kp V         &kp SLASH    &none              &none              &kp G        &kp D  &kp M      &mt RIGHT_ALT J  &mt RSHIFT B
 &none               &none             &none       &kp LEFT_GUI  &lt 2 SPACE  &lt 3 TAB          &lt 2 ENTER        &lt 1 BACKSPACE                                 &none
             >;
@@ -57,27 +57,27 @@
 
         NUM {
             bindings = <
-&kp ESC              &kp N1           &kp N2  &kp N3  &kp MINUS                           &kp GRAVE  &kp N7     &kp N8    &kp                 &kp back
-&mt LEFT_CONTROL N0  &kp N4           &kp N5  &kp N6  &kp EQUAL  &trans         &trans    &kp ENTERkg&kp LPAR  &kp RRAR  &kp LBKT              &mt RIGHT_CONTROL RBKT
-&mt LSHIFT F1        &mt LEFT_ALT N7  &kp N8  &kp N9  &kp SLASH  &trans         &trans    &kp F6     &kp F7     &kp F8    &mt RIGHT_ALT LBRC    &mt RSHIFT RBRC
-&trans   &trans   &trans   &trans      &trans     &trans         &trans    &trans                                                &trans
+&kp ESC              &kp N1           &kp N2  &kp N3  &kp MINUS                           &kp GRAVE  &kp APOS   &kp SEMI   &kp STAR          &kp PIPE
+&mt LEFT_CONTROL N0  &kp N4           &kp N5  &kp N6  &kp PLUS   &trans         &trans    &kp ENTER  &kp LPAR   &kp RRAR   &kp LBKT          &mt RIGHT_CONTROL RBKT
+&mt LSHIFT EQUAL     &mt LEFT_ALT N7  &kp N8  &kp N9  &kp SLASH  &trans         &trans    &kp BSLH   &kp EXCL   &kp QMARK  &mt RIGHT_ALT LT  &mt RSHIFT GT
+&trans               &trans           &trans  &trans  &trans     &trans         &trans    &trans     &trans                                  &trans
             >;
         };
 
         FANCTION {
             bindings = <
-&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                              &kp CARET    &kp AMPERSAND  &kp LS(UNDER)  &kp TILDE     &kp MINUS
-&kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &kp LS(LT)     &kp LS(GT)  &kp LS(DQT)  &kp LS(RPAR)   &kp RBKT       &kp LS(RBRC)  &kp SQT
-&kp F11  &kp F12  &none   &none   &none      &trans         &trans       &trans         &trans         &kp PIPE      &kp BACKSLASH
-&trans   &trans   &trans  &trans  &trans     &trans         &trans                                                  &trans
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                                &trans    &trans           &mkp MB3        &trans           &trans
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &trans         &trons      &trans    &mkp MB1         &kp UP_ARROW    &mkp MB2         &trans
+&kp F11  &kp F12  &none   &none   &none      &trans         &trans      &trans    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans   &trans   &trans  &trans  &trans     &trans         &trans      &trans                                                      &trans
             >;
         };
 
         BLT {
             bindings = <
 &trans        &trans        &trans        &trans        &trans                             &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &tog_ls      &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR    &trans        &trans        &trans        &trans         &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR    &trans        &trans        &trans        &trans         &tog_ls     &trans  &trans  &trans  &trans  &trans  &trans
 &trans        &trans        &trans        &trans        &trans         &trans      &trans  &trans                          &trans
             >;
 
