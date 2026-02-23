@@ -58,9 +58,9 @@
 
         NUM {
             bindings = <
-&kp ESC              &kp N1           &kp N2  &kp N3  &kp MINUS                           &kp GRAVE  &kp APOS   &kp SEMI   &kp STAR          &kp PIPE
-&mt LEFT_CONTROL N0  &kp N4           &kp N5  &kp N6  &kp PLUS   &trans         &trans    &kp UNDER  &kp LPAR   &kp RPAR   &kp LBKT          &mt RIGHT_CONTROL RBKT
-&mt LSHIFT EQUAL     &mt LEFT_ALT N7  &kp N8  &kp N9  &kp SLASH  &trans         &trans    &kp BSLH   &kp EXCL   &kp QMARK  &mt RIGHT_ALT LT  &mt RSHIFT GT
+&kp ESC              &kp_ls N1          &kp_ls N2  &kp_ls N3  &kp_ls MINUS                           &kp_ls GRAVE  &kp_ls APOS   &kp_ls SEMI   &kp_ls STAR          &kp_ls PIPE
+&mt LEFT_CONTROL N0  &kp_ls N4          &kp_ls N5  &kp_ls N6  &kp_ls PLUS   &trans         &trans    &kp_ls UNDER  &kp_ls LPAR   &kp_ls RPAR   &kp_ls LBKT          &mt RIGHT_CONTROL RBKT
+&mt LSHIFT EQUAL     &mt LEFT_ALT N7    &kp_ls N8  &kp_ls N9  &kp_ls SLASH  &trans         &trans    &kp_ls BSLH   &kp_ls EXCL   &kp_ls QMARK  &mt RIGHT_ALT LT  &mt RSHIFT GT
 &trans               &trans           &trans  &trans  &trans     &trans         &trans    &trans     &trans                                  &trans
             >;
         };
