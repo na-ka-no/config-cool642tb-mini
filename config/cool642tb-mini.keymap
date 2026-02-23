@@ -1,5 +1,3 @@
-#include <layout_shift.dtsi>
-#include <layout_shift_kp_override.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -8,7 +6,8 @@
 
 #define MOUSE 4
 #define SCROLL 5
-#define NUM 6
+#define JIS 6
+#define JIS_NUM 7
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
@@ -30,6 +29,16 @@
             key-positions = <18 19>;
         };
     };
+    // NUM(1) + JIS(6) → JIS_NUM(7)
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        jis_num_activate {
+            if-layers = <1 JIS>;
+            then-layer = <JIS_NUM>;
+        };
+    };
+
 
     behaviors {
         encoder_msc_down_up: encoder_msc_down_up {
@@ -39,24 +48,57 @@
             bindings = <&msc SCRL_UP>,<&msc SCRL_DOWN>;
             tap-ms = <20>;
         };
-    };
 
+        // JIS mod-morph: [unshifted, shifted]
+        // mod-morph consumes shift; LS() supplies its own
+
+        jis_minus: jis_minus {  // - / _ → LS(INT1)
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LS(INT1)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_grave: jis_grave {  // ` → LS(LBKT) / ~ → LS(EQUAL)
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT)>, <&kp LS(EQUAL)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_apos: jis_apos {  // ' → LS(N7) / " → LS(N2)
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7)>, <&kp LS(N2)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_semi: jis_semi {  // ; (same) / : → APOS
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp APOS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+    
+     
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        default_layer {  // 0 : default = US;
             bindings = <
 &kp Q               &kp L             &kp U       &kp COMMA     &kp DOT                                            &kp F        &kp W  &kp R      &kp Y            &kp P
 &mt LEFT_CONTROL E  &kp I             &kp A       &kp O         &kp MINUS    &none              &none              &kp K        &kp T  &lt 5 N    &kp S            &mt RIGHT_CONTROL H
 &mt LSHIFT Z        &mt LEFT_ALT X    &kp C       &kp V         &kp SLASH    &none              &none              &kp G        &kp D  &kp M      &mt RIGHT_ALT J  &mt RSHIFT B
 &none               &none             &none       &kp LEFT_GUI  &lt 2 SPACE  &lt 3 TAB          &lt 2 ENTER        &lt 1 BACKSPACE                                 &none
             >;
-
+            
+            
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        NUM {
+        NUM { // 1 : US Num/Sym;
             bindings = <
 &kp ESC              &kpls N1          &kpls N2  &kpls N3  &kpls MINUS                           &kpls GRAVE  &kpls APOS   &kpls SEMI   &kpls STAR          &kpls PIPE
 &mt LEFT_CONTROL N0  &kpls N4          &kpls N5  &kpls N6  &kpls PLUS   &trans         &trans    &kpls UNDER  &kpls LPAR   &kpls RPAR   &kpls LBKT          &mt RIGHT_CONTROL RBKT
@@ -65,7 +107,7 @@
             >;
         };
 
-        FANCTION {
+        FANCTION { // 2
             bindings = <
 &kp F1   &kp F2   &kp F3  &kp F4  &kp F5                                &trans    &trans           &mkp MB3        &trans           &trans
 &kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &trans         &trans      &trans    &mkp MB1         &kp UP_ARROW    &mkp MB2         &trans
@@ -74,18 +116,18 @@
             >;
         };
 
-        BLT {
+        BLT { // 3
             bindings = <
 &trans        &trans        &trans        &trans        &trans                             &trans  &trans  &trans  &trans  &trans
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR    &trans        &trans        &trans        &trans         &tog_ls     &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR    &trans        &trans        &trans        &trans         &tog JIS     &trans  &trans  &trans  &trans  &trans  &trans
 &trans        &trans        &trans        &trans        &trans         &trans      &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        MOUSE {
+        MOUSE { // 4
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
@@ -94,7 +136,7 @@
             >;
         };
 
-        SCROLL {
+        SCROLL { // 5
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -103,21 +145,21 @@
             >;
         };
 
-        layer_6 {
+        JIS_base { // 6: overlay on default_layer;
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &&jis_minus  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
-        layer_7 {
+        JIS_NUM { // 7: auto-activated via conditional_layers;
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp ESC              &kp N1           &kp N2  &kp N3  &jis_minus                                &jis_grave    &jis_apos   &jis_semi  &kp LS(APOS)      &kp LS(INT3)
+&mt LEFT_CONTROL N0  &kp N4           &kp N5  &kp N6  &kp LS(SEMI)   &trans         &trans      &kp LS(INT1)  &kp LS(N8)  &kp LS(N9) &kp RBKT          &mt RIGHT_CONTROL BSLH
+&mt LSHIFT LS(MINUS) &mt LEFT_ALT N7  &kp N8  &kp N9  &kp SLASH      &trans         &trans      &kp INT3      &kp EXCL    &kp QMARK  &mt RIGHT_ALT LT  &mt RSHIFT GT
+&trans               &trans           &trans  &trans  &trans         &trans         &trans      &trans                                                  &trans                        &trans
             >;
         };
     };
