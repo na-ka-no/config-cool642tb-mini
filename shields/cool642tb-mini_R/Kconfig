@@ -1,0 +1,3 @@
+config SHIELD_COOL642TB_MINI_R
+    bool "Cool642TB Mini R"
+    depends on SHIELD

@@ -1,0 +1,2 @@
+rsource "cool642tb-mini_R/Kconfig"
+rsource "cool642tb-mini_L/Kconfig"

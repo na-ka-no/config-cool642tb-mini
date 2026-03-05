@@ -1,0 +1,4 @@
+name: config-cool642tb-mini
+build:
+  settings:
+    board_root: ["shields"]
