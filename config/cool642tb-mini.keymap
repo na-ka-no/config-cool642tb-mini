@@ -37,6 +37,16 @@
 
             tap-ms = <20>;
         };
+
+        mouse_click_exit: mouse_click_exit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &mkp MB1>
+                , <&macro_wait_time 180>
+                , <&to 0>
+                ;
+        };
     };
 
     keymap {
