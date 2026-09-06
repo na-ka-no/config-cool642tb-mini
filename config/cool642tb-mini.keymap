@@ -47,6 +47,27 @@
                 , <&to 0>
                 ;
         };
+
+        mouse_double_click_exit: mouse_double_click_exit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &mkp MB1>
+                , <&macro_tap &mkp MB1>
+                , <&macro_wait_time 180>
+                , <&to 0>
+                ;
+        };
+
+        mouse_rclick_exit: mouse_rclick_exit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &mkp MB2>
+                , <&macro_wait_time 180>
+                , <&to 0>
+                ;
+        };
     };
 
     keymap {
@@ -95,8 +116,8 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mouse_click_exit  &trans  &mouse_rclick_exit  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mouse_double_click_exit    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &to 0
             >;
         };
